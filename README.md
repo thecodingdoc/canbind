@@ -3,7 +3,7 @@
 This repository contains all the code and datasets necessary to reproduce the results in:
 
 Dario Ghersi, Mona Singh
-*"Interaction-based discovery of functionally important genes in cancers"*
+*"Interaction-based discovery of functionally important genes in cancers"*,
 Nucleic Acids Research, 2014, (42):3
 
 ----------------------------------------------------------------------
@@ -30,9 +30,12 @@ packages ready to be installed.
 
 +Setting up the pipeline:
 
-0. Unzip the data folder
+0. Get the data folder
+
+From the main repository folder, type the following commands:
+
 ```
-cat data.tar.bz2.part* > data.tar.bz2 && rm data.tar.bz2.part*
+wget https://www.dropbox.com/s/5v1xqqerum0f5qj/data.tar.bz2?dl=0
 tar xjvf data.tar.bz2
 ```
 
