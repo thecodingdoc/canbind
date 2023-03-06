@@ -1,0 +1,70 @@
+CANBIND v0.1
+----------------------------------------------------------------------
+Dario Ghersi and Mona Singh
+"Systematic discovery of protein binding sites recurrently mutated
+in cancers", submitted
+
+----------------------------------------------------------------------
+
++ Step 1
+
+Goal:
+Parse the Level 2 TCGA data (MAF files) containing the chromosomal
+coordinates of missense mutations, and return protein sequences
+and mutation data at the protein level.
+
+How to:
+Run the 'processTCGAMut.py' script in the ../code/python
+directory with the following parameters:
+
+./processTCGAMut.py TCGA_MAF NCBI_HSREF NCBI_GBS NP_SEQS ...
+                    OUT_SEQS OUT_MUT_DIR OUT_FILE
+
+TCGA_MAF:    the Level 2 TCGA data file containing mutation data
+
+NCBI_HSREF:  directory containing GenBank assembled chromosomes in
+             FASTA format
+
+NCBI_GBS:    directory containing the GenBank summary file
+             with information on how a gene is assembled 
+
+NP_SEQS:     file with the NCBI reference human proteome
+
+OUT_SEQS:    directory where to store protein sequences. Please
+             use the directory 'refSeqs'
+
+OUT_MUT_DIR: directory where to store the mutation counts
+             per-protein. Please create a directory in 'mutDir'
+             named, e.g., BRCA and use that 
+
+OUT_FILE:    summary file with isoform, sample ID, mutation position,
+             reference amino acid, mutated amino acid
+
+A sample run using the example file (first 1000 lines from
+BRCA in TCGA):
+
+./code/python/processTCGAMut.py genome.wustl.edu_BRCA.maf ../data/hsRef ../data/gbs ../data/human.protein.faa mutDir/BRCA BRCA_mut.sample
+
+If you are working with multiple cancer types, or individual sets
+of data that you don't want to aggregate, simply create other
+directories inside 'mutDir' and launch the script again.
+
+----------------------------------------------------------------------
+
+GBS, HSREF and NP_SEQS files are provided with pipeline and
+are available in the 'data' directory, but can also
+be downloaded from the links below.
+It is important to make sure that the NCBI build version of these files
+matches the version used to annotate the cancer sequencing data.
+
+- GBS files are available at:
+
+ftp://ftp.ncbi.nih.gov/genomes/H_sapiens/Assembled_chromosomes/gbs/
+
+- HSREF files are available at:
+
+ftp://ftp.ncbi.nlm.nih.gov/genbank/genomes/Eukaryotes/vertebrates_mammals/Homo_sapiens/GRCh37/Primary_Assembly/assembled_chromosomes/FASTA/
+
+- The NP_SEQS is avaiable at:
+
+ftp://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/mRNA_Prot/human.protein.faa.gz

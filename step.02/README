@@ -1,0 +1,21 @@
+CANBIND v0.1
+----------------------------------------------------------------------
+Dario Ghersi and Mona Singh
+"Systematic discovery of protein binding sites recurrently mutated
+in cancers", submitted
+
+----------------------------------------------------------------------
+
++ Step 2
+
+Goal:
+Carry out a BLAST search against the BioLip database to extract
+the reference sequences with a structural hit  
+
+How to:
+launch the "findMatchesPDB.sh" script
+./findMatchesPDB.sh
+
+The script will create a file named 'refSeqsAgainstBioLip.tab'
+containing the results of the BLAST search.
+Please note that the BLAST step might take a long time to finish.

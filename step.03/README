@@ -1,0 +1,17 @@
+CANBIND v0.1
+----------------------------------------------------------------------
+Dario Ghersi and Mona Singh
+"Systematic discovery of protein binding sites recurrently mutated
+in cancers", submitted
+
+----------------------------------------------------------------------
+
++ Step 3
+
+Goal:
+Assign binding information from BioLip to the reference sequences
+
+How to:
+launch the "assignBindingToRefSeqs.sh" script
+
+./assignBindingToRefSeqs.sh

@@ -1,0 +1,27 @@
+CANBIND v0.1
+----------------------------------------------------------------------
+Dario Ghersi and Mona Singh
+"Systematic discovery of protein binding sites recurrently mutated
+in cancers", submitted
+
+----------------------------------------------------------------------
+
++ Step 4
+
+Goal: compute empirical p-values
+
+How to:
+
+./calculatePValues.sh CANCER_TYPE
+
+CANCER_TYPE has to refer to the directory create in step.01 in mutDir,
+e.g., BRCA.
+The script will invoke a c++ program to perform the randomizations
+and return uncorrected p-values for each site, store in a file
+named CANCER_TYPE_pvals.txt.
+A p-value of -1 means that no mutation in a residue with structural
+information was found. By default a value of 1 is assigned
+to binding sites that do not have any mutations.
+
+In case of multiple cancer types, you would have to run the script
+for each cancer type.
